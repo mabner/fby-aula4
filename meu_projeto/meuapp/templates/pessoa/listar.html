@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Listagem de Pessoas Cadastradas</title>
 </head>
 <body>
 <!-- Este é um comentário HTML -->
@@ -13,7 +13,7 @@
 	{% for pessoa in pessoas %}
 		<li><a href="{% url 'detalhar_pessoa3' pessoa.id %}">{{ pessoa.nome }}</a></li>
 		<!-- Exemplo "na mão"
-			<li><a href="/meuapp/pessoa3/{{ pessoa.id }}">{{ pessoa.nome }}</a></li> 
+			<li><a href="/meuapp/pessoa3/{{ pessoa.id }}">{{ pessoa.nome }}</a></li>
 		-->
 	{% endfor %}
 	</ul>

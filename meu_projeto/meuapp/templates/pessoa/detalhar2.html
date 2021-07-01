@@ -1,0 +1,5 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+	{{ pessoa.nome }} nasceu em {{ pessoa.dataNascimento | date:"d/m/Y" }}
+{% endblock %}

@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "9fe99690-4991-46f4-9175-43c10a8fb526",
+		"name": "Python/Django",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetPessoas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome_completo\": \"Paulo Tavares\",\r\n    \"telefone\": {\r\n        \"ddd\":31,\r\n        \"numero\":\"987654321\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/meuapp/enviar_json"
+			},
+			"response": []
+		},
+		{
+			"name": "Indice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "DRF_Lista",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/meuapp/pessoas"
+			},
+			"response": []
+		},
+		{
+			"name": "DRF_detalhe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/meuapp/pessoas/11"
+			},
+			"response": []
+		},
+		{
+			"name": "DRF_criar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Antonio\",\r\n    \"sobrenome\": \"Pereira\",\r\n    \"dataNascimento\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/meuapp/pessoas/"
+			},
+			"response": []
+		},
+		{
+			"name": "DRF_deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8000/meuapp/pessoas/11/"
+			},
+			"response": []
+		},
+		{
+			"name": "DRF_atualizar_tudo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Rommel\",\r\n    \"sobrenome\": \"Carneiro\",\r\n    \"dataNascimento\": \"1980-01-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/meuapp/pessoas/11/"
+			},
+			"response": []
+		},
+		{
+			"name": "DRF_atualizar Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sobrenome\": \"Bezerra\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/meuapp/pessoas/11/"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- Este é um comentário HTML -->
+{# Este é um comentário em template #}
+<b>Mensagem: </b> {{ msg }}
+<br>
+{% if pessoas %}
+	<ul>
+	{% for pessoa in pessoas %}
+		<li><a href="{% url 'detalhar_pessoa3' pessoa.id %}">{{ pessoa.nome }}</a></li>
+		<!-- Exemplo "na mão"
+			<li><a href="/meuapp/pessoa3/{{ pessoa.id }}">{{ pessoa.nome }}</a></li> 
+		-->
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>Não há pessoas cadastradas.</p>
+{% endif %}
+
+</body>
+</html>

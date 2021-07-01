@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Meu APP</title>
+	<!-- Importar CSS e JS -->
+</head>
+
+<body>
+    <div id="sidebar">
+    	{% block sidebar %}
+	    	<ul>
+			{% for pessoa in pessoas %}
+				<li><a href="{% url 'detalhar_pessoa3' pessoa.id %}">{{ pessoa.nome }}</a></li>
+			{% endfor %}
+			</ul>
+        {% endblock %}
+    </div>
+	<hr>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

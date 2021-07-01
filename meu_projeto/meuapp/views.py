@@ -39,3 +39,44 @@ def detalharpessoa(request):
         'listapessoas': pessoas,
     }
     return HttpResponse(template.render(context, request))
+
+
+def listar_pessoas(request):
+
+    pessoas = Pessoa.objects.all()
+    lista = {"listarpessoas": pessoas}
+
+    for pessoa in pessoas:
+        pdic = {
+            'id': pessoa.id,
+            'nome': pessoa.nome, 'sobrenome': pessoa.sobrenome,
+            'idade': pessoa.idade
+        }
+        lista.append(pdic)
+
+    template = loader.get_template("pessoa/listar.html")
+
+    return HttpResponse(template.render(lista, request))
+
+
+def apagar(request, idpessoa):
+    try:
+        Pessoa.objects.get(id=idpessoa).delete()
+    except:
+        return HttpResponse("Erro ao apagar a pessoa, ou não encontrada")
+
+    return HttpResponse("Pessoa apagada")
+
+
+def editar_pessoa(request, idPessoa, nome, sobrenome, idade):
+    try:
+        pessoa = Pessoa.objects.get(id=idPessoa)
+        pessoa.nome = nome
+        pessoa.sobrenome = sobrenome
+        pessoa.idade = idade
+        pessoa.save()
+
+    except:
+        return HttpResponse("Erro ao editar registro")
+
+    return HttpResponse("Registro atualizado")

@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+	<head>
+		<title>Cadastrar Nova Pessoa</title>
+	</head>
+
+	<body>
+		<div>
+			<span><a href="listar_pessoas">Listar</a></span>
+			<span><a href="#">Alterar</a></span>
+			<span><a href="#">Apagar</a></span>
+		</div>
+		<div>
+			<div>
+				<div>
+					<h3><b>Incluir Pessoa</b></h3>
+					<p>
+						----------------------------------------------------------------------------------------------------------------------------------
+					</p>
+					<form method="post">
+						{% csrf_token %} {{ form }}
+						<input type="submit" value="Submit" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

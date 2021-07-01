@@ -1,0 +1,9 @@
+{% if cargos %}
+<ul>
+	{% for cargo in cargos %}
+	<li><a href="/pessoa/{{ pessoa.id }}/">{{ pessoa.nome }}</a></li>
+	{% endfor %}
+</ul>
+{% else %}
+<p>Não há cargos cadastrados.</p>
+{% endif %}

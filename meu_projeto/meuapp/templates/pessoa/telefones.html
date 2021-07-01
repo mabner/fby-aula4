@@ -1,0 +1,9 @@
+{% if telefones %}
+<ul>
+	{% for telefone in telefones %}
+	<li><a href="/pessoa/{{ pessoa.id }}/">{{ pessoa.nome }}</a></li>
+	{% endfor %}
+</ul>
+{% else %}
+<p>Não há telefones cadastrados.</p>
+{% endif %}

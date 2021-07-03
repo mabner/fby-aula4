@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Listagem de Pessoas Cadastradas</title>
-</head>
-<body>
-<!-- Este é um comentário HTML -->
-{# Este é um comentário em template #}
-<b>Mensagem: </b> {{ msg }}
-<br>
-{% if pessoas %}
-	<ul>
-	{% for pessoa in pessoas %}
-		<!-- <li><a href="{% url 'listar_pessoas' pessoa.id %}">{{ pessoa.nome }}</a></li> -->
-		Exemplo "na mão"
-			<li><a href="/meuapp/listar_pessoas/{{ pessoa.id }}">{{ pessoa.nome }}</a></li>
-
-	{% endfor %}
-	</ul>
-{% else %}
-	<p>Não há pessoas cadastradas.</p>
-{% endif %}
-
-</body>
+	<head>
+		<title>Listagem de Pessoas Cadastradas</title>
+	</head>
+	<body>
+		<!-- Este é um comentário HTML -->
+		{# Este é um comentário em template #}
+		<b>Mensagem: </b> {{ msg }}
+		<br />
+		{% if pessoas %}
+		<ul>
+			{% for pessoa in pessoas %}
+			<li>
+				<a href="{% url 'listar_pessoas' pessoa.id %}"
+					>{{ pessoa.nome }}</a
+				>
+			</li>
+			<!-- <li><a href="/meuapp/pessoa/{{ pessoa.id }}">{{ pessoa.nome }}</a></li> -->
+			{% endfor %}
+		</ul>
+		{% else %}
+		<p>Não há pessoas cadastradas.</p>
+		{% endif %}
+	</body>
 </html>

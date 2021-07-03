@@ -1,3 +1,4 @@
+from re import template
 from django.http import HttpResponse
 from django.http.response import JsonResponse
 from django.template import loader
@@ -101,9 +102,16 @@ def listar_pessoas(request):
         }
         lista[pessoas] = pdic
 
-    template = loader.get_template("pessoa/index.html")
+    template = loader.get_template("pessoa/listar.html")
 
     return HttpResponse(template.render(lista, request))
+
+
+@csrf_exempt
+def pessoa(request):
+
+    template = loader.get_template("pessoa/index.html")
+    return HttpResponse(template.render(request))
 
 
 @csrf_exempt

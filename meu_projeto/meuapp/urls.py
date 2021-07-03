@@ -18,7 +18,8 @@ router.register(r'departamento', views.DepartamentoViewSet)
 # Backup dos paths
 
 urlpatterns = [
-    path('', views.PessoaViewSet, name='indice'),
+    path('', include(router.urls)),
+    #     path('', views.PessoaViewSet, name='indice'),
     path('pessoa/<int:idpessoa>', views.detalharpessoa, name='detalhar_pessoa'),
     path('pessoa/listar', views.listar_pessoas, name='listar'),
     path('enviar_json', views.enviar_json, name='enviar_json'),

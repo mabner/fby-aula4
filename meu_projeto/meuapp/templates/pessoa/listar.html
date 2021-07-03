@@ -11,10 +11,10 @@
 {% if pessoas %}
 	<ul>
 	{% for pessoa in pessoas %}
-		<li><a href="{% url 'detalharpessoa' pessoa.id %}">{{ pessoa.nome }}</a></li>
-		<!-- Exemplo "na mão"
-			<li><a href="/meuapp/pessoa3/{{ pessoa.id }}">{{ pessoa.nome }}</a></li>
-		-->
+		<!-- <li><a href="{% url 'listar_pessoas' pessoa.id %}">{{ pessoa.nome }}</a></li> -->
+		Exemplo "na mão"
+			<li><a href="/meuapp/listar_pessoas/{{ pessoa.id }}">{{ pessoa.nome }}</a></li>
+
 	{% endfor %}
 	</ul>
 {% else %}

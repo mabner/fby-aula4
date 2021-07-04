@@ -15,14 +15,9 @@ def listar_pessoas(request):
     return render(request, 'pessoa/listar.html', {'pessoas': pessoas})
 
 
-def detalharpessoa(request):
-
-    pessoas = Pessoa.objects.order_by('nome')
-    template = loader.get_template('pessoa/detalhar.html')
-    context = {
-        'listapessoas': pessoas,
-    }
-    return HttpResponse(template.render(context, request))
+def detalharpessoa(request, idpessoa):
+    pessoa_detalhe = Pessoa.objects.obter_detalhe_pessoa(idpessoa)
+    return render(request, 'pessoa/detalhar.html', {'pessoa_detalhe': pessoa_detalhe})
 
 
 def pessoa(request):

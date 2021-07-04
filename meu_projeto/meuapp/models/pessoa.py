@@ -7,6 +7,9 @@ class PessoaManager(models.Manager):
     def obter_pessoa_id(self, idpessoa):
         return self.get(id=idpessoa)
 
+    def obter_detalhe_pessoa(self, idpessoa):
+        return self.get(id=idpessoa)
+
     def obter_todas_pessoas(self):
         return self.all()
 

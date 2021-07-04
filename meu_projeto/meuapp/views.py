@@ -16,8 +16,8 @@ def listar_pessoas(request):
 
 
 def detalharpessoa(request, idpessoa):
-    pessoa_detalhe = Pessoa.objects.obter_detalhe_pessoa(idpessoa)
-    return render(request, 'pessoa/detalhar.html', {'pessoa_detalhe': pessoa_detalhe})
+    pessoa = Pessoa.objects.obter_detalhe_pessoa(idpessoa)
+    return render(request, 'pessoa/detalhar.html', {'pessoa': pessoa})
 
 
 def pessoa(request):

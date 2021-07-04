@@ -3,12 +3,8 @@ from rest_framework import routers
 from . import views
 
 
-router = routers.DefaultRouter()
-router.register(r'pessoas', views.PessoaViewSet)
-router.register(r'departamento', views.DepartamentoViewSet)
-
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', views.index, name='index'),
     path('pessoa/<int:idpessoa>', views.detalharpessoa, name='detalhar_pessoa'),
     path('pessoa/listar', views.listar_pessoas, name='listar'),
     path('pessoa', views.pessoa, name='index'),
